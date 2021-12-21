@@ -3,10 +3,14 @@ const canvas = document.querySelector('#gameArea')
 
 // let choice = document.getElementById('playButton')
 
+let playFire = document.querySelector('#startButton')
+
+let pauseFire = document.querySelector('#pauseButton')
+
 // @ts-ignore
 const ctx = canvas.getContext('2d')
 
-// let pause = true
+let pause = true
 
 let x = 100
 let y = 100
@@ -20,15 +24,19 @@ let leftPressed = false
 let rightPressed = false
 
 function drawGame() {
-    console.log('draw')
+    toggleGame()
     // if (pause = false) {
     //     requestAnimationFrame(drawGame)
     // }
-    requestAnimationFrame(drawGame)
+    // requestAnimationFrame(drawGame)
     clearScreen()
     inputs()
     boundryCheck()
     drawGreenBlob()
+}
+
+function toggleGame() {
+    console.log(playFire, pauseFire);
 }
 
 function boundryCheck() {
